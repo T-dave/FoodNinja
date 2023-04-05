@@ -1,0 +1,130 @@
+import React, { useRef } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import BottomSheet from 'reanimated-bottom-sheet';
+
+const MyComponent = () => {
+  const sheetRef = useRef(null);
+
+  const renderContent = () => (
+    <View style={{ backgroundColor: 'white', height: '100%' }}>
+      <Text>This is the content of the sheet</Text>
+    </View>
+  );
+
+  const handleSheetChanges = (index) => {
+    // handle sheet changes here
+  };
+
+  return (
+    <>
+      <TouchableOpacity onPress={() => sheetRef.current.snapTo(0)}>
+        <Text>Open Bottom Sheet</Text>
+      </TouchableOpacity>
+      <BottomSheet
+        ref={sheetRef}
+        snapPoints={['60%', '80%', '100%']}
+        initialSnap={0}
+        renderContent={renderContent}
+        callbackNode={handleSheetChanges}
+      />
+    </>
+  );
+};
+
+export default MyComponent;
+
+
+
+//for the swipeable view in the order screen
+
+import React, { useState } from 'react';
+import { View, StyleSheet, PanResponder, Animated, Text } from 'react-native';
+
+export default function MyComponent() {
+  const [containerVisible, setContainerVisible] = useState(false);
+  const pan = useState(new Animated.ValueXY())[0];
+
+  const panResponder = useState(
+    PanResponder.create({
+      onMoveShouldSetPanResponder: (_, gestureState) => {
+        // Set the pan responder to active when the user starts swiping horizontally
+       return Math.abs(gestureState.dx) > Math.abs(gestureState.dy);
+      },
+      onPanResponderMove: (_, gestureState) => {
+        // Update the position of the top container based on the swipe gesture
+        pan.setValue({ x: gestureState.dx, y: 0 });
+      },
+      onPanResponderRelease: (_, gestureState) => {
+        // Determine whether to show or hide the hidden container based on the final position of the top container
+        if (gestureState.dx < -100) {
+          // Show the hidden container if the top container has been swiped more than 100 pixels to the right
+          setContainerVisible(true);
+          Animated.timing(pan, {
+            toValue: { x: -200, y: 0 },
+            duration: 200,
+            useNativeDriver: true,
+          }).start();
+        } else {
+          // Hide the hidden container if the top container has not been swiped enough
+          setContainerVisible(false);
+          Animated.timing(pan, {
+            toValue: { x: 0, y: 0 },
+            duration: 200,
+            useNativeDriver: true,
+          }).start();
+        }
+      },
+    })
+  )[0];
+
+  const hiddenContainerStyles = [
+    styles.containerInner,
+    styles.hiddenContainer,
+    { opacity: containerVisible ? 1 : 0 },
+  ];
+
+  return (
+    <View style={styles.container}>
+      {/* Hidden container */}
+      <Animated.View style={hiddenContainerStyles}>
+        <Text>Bottom</Text>
+      </Animated.View>
+
+      {/* Top container */}
+      <Animated.View
+        style={[
+          styles.containerInner,
+          styles.topContainer,
+          { transform: [{ translateX: pan.x }] },
+        ]}
+        {...panResponder.panHandlers}
+      >
+        <Text>Swipe me</Text>
+      </Animated.View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  containerInner: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  hiddenContainer: {
+    backgroundColor: '#f0f0f0',
+    zIndex: 1,
+  },
+  topContainer: {
+    backgroundColor: '#e0e0e0',
+    zIndex: 2,
+  },
+});
