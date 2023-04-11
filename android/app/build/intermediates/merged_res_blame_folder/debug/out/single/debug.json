@@ -1,0 +1,150 @@
+[
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_icon4.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_icon4.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.foodninja.app-main-31:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.foodninja.app-main-31:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.foodninja.app-main-31:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_pic1.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_pic1.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.foodninja.app-main-31:/drawable/rn_edit_text_material.xml"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_payoneer.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_payoneer.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_facebook.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_facebook.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_icon2.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_icon2.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_pattern3.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_pattern3.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_back.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_back.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.foodninja.app-main-31:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_node_modules_reactnative_libraries_newappscreen_components_logo.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/node_modules_reactnative_libraries_newappscreen_components_logo.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_icon3.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_icon3.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_check.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_check.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.foodninja.app-main-31:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.foodninja.app-main-31:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_foodninja.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_foodninja.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_pattern.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_pattern.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_google.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_google.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.foodninja.app-main-31:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.foodninja.app-main-31:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_camera.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_camera.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_icon1.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_icon1.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_pattern2.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_pattern2.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_logo.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_logo.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_pattern4.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_pattern4.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.foodninja.app-main-31:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.foodninja.app-main-31:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_paypal.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_paypal.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-mdpi_assets_visa.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-mdpi/assets_visa.png"
+    },
+    {
+        "merged": "com.foodninja.app-merged_res-29:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.foodninja.app-main-31:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    }
+]

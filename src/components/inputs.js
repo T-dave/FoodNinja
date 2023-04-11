@@ -8,7 +8,7 @@ export const TextInput1 = ({values, handleBlur, handleChange, placeholder, name,
 		                  name={name}
 		                  placeholder={placeholder}
 		                  placeholderTextColor="#3B3B3B"
-		                  style={[styles.textInput, {padding:10}]}
+		                  style={[styles.textInput, {backgroundColor:'#fff',flex:1, height:'100%', color:'#000', padding:10}]}
 		                  onChangeText={handleChange}
 		                  onBlur={handleBlur}
 		                  keyboardType={type}
@@ -17,11 +17,14 @@ export const TextInput1 = ({values, handleBlur, handleChange, placeholder, name,
 		)
 }
 
-export const TextInput2 = ({values, handleBlur, handleChange, placeholder, name, type, secure, icon})=>{
+export const TextInput2 = ({values, handleBlur, handleChange, placeholder, name, type, secure, icon, green})=>{
 	const [secureText, setSecure] = useState(secure)
 	return(			
 				<TouchableOpacity style={[styles.textInput, {flexDirection:'row', alignItems:'center', paddingHorizontal:10,}]}>
-					<Image source ={icon} style={{width:24, height:24, marginRight:10}}/>
+					{icon && (
+						<Image source ={icon} style={{width:24, height:24, marginRight:10}}/>
+					)}
+					
 					<TextInput
 		                  name={name}
 		                  placeholder={placeholder}
@@ -34,7 +37,11 @@ export const TextInput2 = ({values, handleBlur, handleChange, placeholder, name,
 		                />
 		            {secure === true && (
 		            	<TouchableOpacity onPress={()=>setSecure(!secureText)}>
-		            	<Image source ={require('../../assets/icon4.png')} style={{width:24, height:24}}/>
+						{green ?
+							<Image source ={require('../../assets/icon5.png')} style={{width:24, height:24}} resizeMode='contain'/>
+							:
+							<Image source ={require('../../assets/icon4.png')} style={{width:24, height:24}} resizeMode='contain'/>
+						}
 		            	</TouchableOpacity>
 		            )}    
 		        </TouchableOpacity>        
@@ -54,18 +61,18 @@ const styles = StyleSheet.create({
 		borderRadius: 15,
 		marginBottom:30,
 		color:"#000",
+		shadowColor: 'rgba(90, 108, 234, 0.7)',
 		...Platform.select({
 	      ios: {
-	        shadowColor: '#082463',
+	        shadowColor: 'rgba(90, 108, 234, 0.7)',
 	        shadowOffset: {
 	          width: 0,
 	          height: 1,
 	        },
-	        shadowOpacity: 0.2,
-	        shadowRadius: 1.41,
+	        shadowRadius: 50,
 	      },
 	      android: {
-	        elevation: 5,
+	        elevation: 50,
 	      },
 	    }),
 	},

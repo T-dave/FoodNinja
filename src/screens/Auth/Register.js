@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import { View, ImageBackground, Text, StyleSheet, Image, Platform, TextInput, KeyboardAvoidingView, ScrollView } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import { View, ImageBackground, Text, StyleSheet, Image, Platform, TextInput, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
 import {Field, Formik} from 'formik';
 import * as yup from 'yup';
 import {GreenButton} from '../../components/buttons';
@@ -22,20 +22,24 @@ const loginValidationSchema = yup.object().shape({
 
 
 const Register = ({navigation})=>{
+	const [check1, set1] = useState(false)
+	const [check2, set2] = useState(false)
 	return(
 		<KeyboardAvoidingView style ={styles.container}>
 			
 			<ImageBackground style={styles.imageContainer} source ={require('../../../assets/pattern.png')}>
 			<ScrollView contentContainerStyle={{flexGrow:1, justifyContent:'space-between'}}>
-			<View style={{alignItems:'center',}}>
-				<View style={{marginVertical: 50}}>
-					<Image source={require('../../../assets/logo.png')} style={{width:175, height:139}}/>
-					<Image source={require('../../../assets/foodninja.png')} style={{width:188, height:54}} resizeMode="contain"/>
-					<Text style={styles.text}>Deliever Favorite Food</Text>
+			<View >
+				<View style={{alignItems:'center'}}>
+					<View style={{marginVertical: 50}}>
+						<Image source={require('../../../assets/logo.png')} style={{width:175, height:139}}/>
+						<Image source={require('../../../assets/foodninja.png')} style={{width:188, height:54}} resizeMode="contain"/>
+						<Text style={styles.text}>Deliever Favorite Food</Text>
+					</View>
+					<Text style={styles.login}>
+						Sign Up For Free
+					</Text>
 				</View>
-				<Text style={styles.login}>
-					Sign Up For Free
-				</Text>
 				 <Formik
 		           validationSchema={loginValidationSchema}
 				   initialValues={{ email: '', password: '' }}
@@ -45,7 +49,7 @@ const Register = ({navigation})=>{
 		            {({ handleChange, handleBlur, handleSubmit, values }) => (
 		              <>
 
-		              <View style={{marginTop:50,width:'100%', alignItems:'center', paddingHorizontal:'10%'}}>
+		              <View style={{marginTop:50,width:'100%', alignItems:'center', paddingHorizontal:'5%'}}>
 
 
 		              <TextInput2
@@ -79,13 +83,57 @@ const Register = ({navigation})=>{
 		                />
 
 		                </View>
+						
 			            
 			          </>
 			        )}
 			      </Formik>
-			      </View>
+			      
+				  {
+					check1 ?
+					<TouchableOpacity style={[styles.bottom, {marginBottom:10}]} onPress={()=>set1(!check1)}>
+							<View style={[styles.checked, {backgroundColor:'#53E88B',}]}>
+							<Image source={require('../../../assets/check.png')} style={{width:12, height:12}} resizeMode='contain'/>
+							</View>
+							
+							<Text style={styles.bText}>Keep me signed in</Text>
+					</TouchableOpacity>
+					:
+					<TouchableOpacity style={[styles.bottom, {marginBottom:10}]} onPress={()=>set1(!check1)}>
+							<View style={styles.checked}>
+							<Image source={require('../../../assets/check.png')} style={{width:12, height:12}} resizeMode='contain'/>
+							</View>
+							
+							<Text style={styles.bText}>Keep me signed in</Text>
+					</TouchableOpacity>
+				  }
+				  
+				  {
+					check2 ?
+					<TouchableOpacity style={[styles.bottom, {marginBottom:10,}]} onPress={()=>set2(!check2)}>
+							<TouchableOpacity style={[styles.checked, {backgroundColor:'#53E88B',}]} onPress={()=>console.log('hiii')}>
+							<Image source={require('../../../assets/check.png')} style={{width:12, height:12}} resizeMode='contain'/>
+							</TouchableOpacity>
+							
+							<Text style={styles.bText}>Email Me About Special Pricing</Text>
+					</TouchableOpacity>
+					:
+					<TouchableOpacity style={[styles.bottom, {marginBottom:10}]} onPress={()=>set2(!check2)}>
+							<View style={styles.checked}>
+							<Image source={require('../../../assets/check.png')} style={{width:12, height:12}} resizeMode='contain'/>
+							</View>
+							
+							<Text style={styles.bText}>Email Me About Special Pricing</Text>
+					</TouchableOpacity>
+				  }
+				  </View>
+
 			      <View style={{justifyContent:'center', alignItems:'center'}}>
-			      <GreenButton label = {'Create Account'} onPress={()=>navigation.navigate('Home')}/>
+			      <GreenButton label = {'Create Account'} onPress={()=>navigation.navigate('Bio1')}/>
+				  <TouchableOpacity onPress={()=>navigation.navigate('LogIn')}>
+				  	<Text style={styles.down}>already have an account?</Text>
+				  </TouchableOpacity>
+				  
 			      </View>
 			      </ScrollView>
 			</ImageBackground>
@@ -157,9 +205,43 @@ const styles = StyleSheet.create({
 	socials:{
 		width:'100%', 
 		justifyContent:'space-between', 
-		paddingHorizontal:'10%', 
+		paddingHorizontal:'5%', 
 		flexDirection:'row', 
 		marginVertical:20
+	},
+	bText:{
+		fontFamily: 'BentonSans Book',
+		fontStyle: 'normal',
+		fontWeight: '400',
+		fontSize: 12,
+		textAlign: 'center',
+		color: '#000000',
+		marginLeft:10
+	},
+	bottom:{
+		flexDirection:'row', 
+		alignItems:'center', 
+		paddingHorizontal:'5%', 
+		
+	},
+	checked:{
+		width: 22,
+		height: 22,
+		alignItems:'center',
+		justifyContent:'center',
+		borderWidth: 1,
+		borderColor:'#F4F4F4',
+		borderRadius: 15,
+	},
+	down:{
+		fontFamily: 'BentonSans Medium',
+		fontStyle: 'normal',
+		fontWeight: '400',
+		fontSize: 12,
+		color:'#53E88B',
+		textAlign: 'center',
+		textDecorationLine: 'underline',
+		textDecorationColor:'#53E88B',
 	},
 	 socialView:{
 	 	backgroundColor: '#fff',
@@ -183,7 +265,8 @@ const styles = StyleSheet.create({
 	      android: {
 	        elevation: 5,
 	      },
-	    }),
+	    },),
+
 	 }
 });
 export default Register
